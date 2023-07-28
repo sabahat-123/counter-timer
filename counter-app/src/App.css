@@ -4,14 +4,12 @@
 body{
   margin: 0;
   background: linear-gradient(to right , #944fe2,#b29bcc);
-  /* background-color: #198c9b ; */
-}
+ }
 .header-title{
   text-align: center;
   font-size: 3rem;
 }
 .Timers {
-  width: 180px;
   margin: 0 auto;
   text-align: center;
 }
@@ -23,23 +21,23 @@ body{
   font-size: 36px;
 }
 #buttons button:nth-child(2) {
-  margin-left: 8px;
+  margin-left: 20px;
 }
 
 button {
   font-size: 16px;
-  background-color: rgb(217, 60, 35);
+  background-color: #008CBA;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 5px;
   border: none;
-  padding: 6px 12px;
+  padding: 15px 32px;
   cursor: pointer;
 }
 button:hover {
-  background-color: rgb(173, 47, 28);
+  background-color: #000;
 }
 button:active {
-  background-color: rgb(130, 35, 21);
+  background-color: #000;
 }
 button:focus {
   outline: 0;

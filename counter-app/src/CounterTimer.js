@@ -7,8 +7,8 @@ function CounterTimer(){
         let interval = null;
         if(timeOn){
             interval = setInterval(()=>{
-                setTime((prevTime)=> prevTime + 1);
-            },1000);
+                setTime((prevTime)=> prevTime + 10);
+            },10);
         }else if(!timeOn){
             clearInterval(interval);
         }
@@ -20,15 +20,21 @@ function CounterTimer(){
     
       <div className='Timers'>
         <div id="display">
-            <span>{("0" + Math.floor((time / 6000) % 60)).slice(-2)}:</span>
-            <span>{("0" + Math.floor((time / 6000) % 60)).slice(-2)}:</span>
-            <span>{("0" + ((time / 1) % 60)).slice(-2)}</span>
+        <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+        <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
         </div>
-        <div id="button">
-            <button onClick={()=>setTimeOn(true)}>Start</button>
-            <button onClick={()=>setTimeOn(false)}>Stop</button>
-            <button onClick={()=>setTimeOn(true)}>Restart</button>
-            <button onClick={() => setTime(0)}>Reset</button>
+        <div id="buttons">
+        {!timeOn && time === 0 && (
+          <button onClick={() =>setTimeOn(true)}>Start</button>
+        )}
+        {timeOn && <button onClick={() => setTimeOn(false)}>Stop</button>}
+        {!timeOn && time > 0 && (
+          <button onClick={() => setTime(0)}>Reset</button>
+        )}
+        {!timeOn && time > 0 && (
+          <button onClick={() => setTimeOn(true)}>Restart</button>
+        )}
         </div>
        </div>
       
